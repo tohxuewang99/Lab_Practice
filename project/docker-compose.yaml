@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend  # Path to the Flask backend directory
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: ./frontend  # Path to the React.js frontend directory
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

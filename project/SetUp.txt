@@ -1,0 +1,32 @@
+Set up backend (environment):
+-> create virtual environment: 
+Cd project
+python -m venv env
+
+Activate environment:
+-> Windows: 
+.\env\Scripts\activate
+
+-> Mac/Linux: 
+source env/bin/activate
+
+Install dependecies in env:
+pip install -r requirements.txt
+
+
+Set up frontend:
+npm install
+
+
+Start up from terminal for backend:
+cd backend
+pip install flask
+pip install flask_cors
+pip install pymongo
+pip install flask_login
+python app.py
+
+Start up from terminal for frontend:
+-> open another terminal
+cd frontend 
+npm start

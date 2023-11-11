@@ -1,0 +1,23 @@
+# Use an official Python runtime as a parent image
+FROM python:3.8
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the requirements.txt file from the parent directory
+COPY ../requirements.txt /app/requirements.txt
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
+# Copy the rest of the application code
+COPY . .
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable
+ENV FLASK_APP=app.py
+
+# Run flask when the container launches
+CMD ["flask", "run", "--host=0.0.0.0"]
